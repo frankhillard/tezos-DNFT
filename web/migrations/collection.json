@@ -1,10 +1,10 @@
 {
-    "name": "Lyzi NFT Collection",
-    "description": "Lyzi NFT Collection",
+    "name": "DNFT Collection",
+    "description": "DNFT Collection",
     "version": "1.0.0",
     "authors": [
-        "smart-chain <contact@smart-chain.fr>"
+        "company <contact@company.com>"
     ],
-    "homepage": "https://www.lyzi.com/",
+    "homepage": "https://www.company.com/",
     "interfaces": ["TZIP-012", "TZIP-016", "TZIP-021"]
 }

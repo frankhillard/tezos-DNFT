@@ -1,7 +1,7 @@
 {
-  "name": "@lyzi/nft",
+  "name": "@company/nft",
   "version": "1.0.0",
-  "description": "Lyzi NFT contract and scripts",
+  "description": "DNFT contract and scripts",
   "scripts": {
     "deploy:factory": "ts-node migrations/1_factory.ts",
     "deploy:collection": "ts-node scripts/collection.ts",

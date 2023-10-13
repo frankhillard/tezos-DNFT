@@ -24,10 +24,10 @@ standards and recommendations
 
 ```json
 {
-    "name": "LYZI - asset title",
-    "symbol": "LYZI",
+    "name": "DNFT - asset title",
+    "symbol": "DNFT",
     "decimals": 0,
-    "description": "LYZI NFT asset - catchphrase",
+    "description": "DNFT asset - catchphrase",
     "identifier": "http://source-asset.somewhere/this-is-true-trust-me",
     "isBooleanAmount": false
 }
