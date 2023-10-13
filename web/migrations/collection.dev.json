@@ -1,0 +1,10 @@
+{
+    "name": "LYZI TEST / NFT Collection",
+    "description": "LYZI TEST / NFT Collection",
+    "version": "beta",
+    "authors": [
+        "smart-chain <contact@smart-chain.fr>"
+    ],
+    "homepage": "https://www.smart-chain.fr",
+    "interfaces": ["TZIP-012", "TZIP-016", "TZIP-021"]
+}

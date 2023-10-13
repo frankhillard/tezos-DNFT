@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# run a local tezos sandbox
+# https://tezos.gitlab.io/flextesa/
+
+project=$1
+name="$project"-sandbox
+
+image=oxheadalpha/flextesa:20221123
+script=limabox
+
+docker run --rm --name "$name" --detach -p 20000:20000 \
+       -e block_time=3 \
+       -e flextesa_node_cors_origin='*' \
+       "$image" "$script" start
+
+# let it time to bootstrap..
+sleep 10
+
+# add missing accounts
+docker exec "$name" octez-client import secret key creator \
+    unencrypted:edsk3RhWtM3yqsp1qRj1VDR83XzanEMnvg7BwnePTu9ESE1KR39vBG
+
+docker exec "$name" octez-client import secret key user \
+    unencrypted:edsk3RfpoFRtkizoSxkTMyV9vCfkQGACWe6ve91d4hgdGz9jhQnbzu
+
+# fund them
+reveal_fee=0.06425
+
+docker exec "$name" octez-client transfer 10000 from alice to creator --burn-cap "$reveal_fee"
+docker exec "$name" octez-client transfer 10000 from alice to user --burn-cap "$reveal_fee"

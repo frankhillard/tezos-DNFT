@@ -1,0 +1,13 @@
+node_modules
+/compiled
+/.env
+
+/web/assets
+/web/deployments
+/web/node_modules
+
+# ligo
+.ligo
+.ligo-work
+_esy
+esy.lock

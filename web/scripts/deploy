@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+MIGRATIONS_DIR=./web/migrations
+
+run() {
+    migrations=$(find "${MIGRATIONS_DIR}" -type f | sort)
+
+    for file in $migrations; do
+        f=$(basename "$file")
+        ext=${f##*.}
+        if [[ "$ext" == "ts" ]]; then
+            echo "Deploying file : $f"
+            npx ts-node "${MIGRATIONS_DIR}/${f}"
+        fi
+    done
+}
+
+run
